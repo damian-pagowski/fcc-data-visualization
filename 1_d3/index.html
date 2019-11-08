@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+  </head>
+  <style>
+    .bar {
+      width: 25px;
+      height: 100px;
+      display: inline-block;
+      background-color: blue;
+      margin: 2px;
+    }
+    svg {
+      background-color: pink;
+    }
+  </style>
+  <body>
+    <ul>
+      <li>Example</li>
+      <li>Example</li>
+      <li>Example</li>
+    </ul>
+    <script>
+      // Add Document Elements with D3
+      d3.select("body")
+        .append("h1")
+        .text("Learning D3");
+      // Select a Group of Elements with D3
+      d3.selectAll("li").text("list item");
+      //   Data Visualization with D3: Work with Data in D3
+      const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+      //   d3.select("body")
+      //     .selectAll("h2")
+      //     .data(dataset)
+      //     .enter()
+      //     .append("h2")
+      //     .text("New Title");
+      // Data Visualization with D3: Work with Dynamic Data in D3
+      d3.select("body")
+        .selectAll("h2")
+        .data(dataset)
+        .enter()
+        .append("h2")
+        .text(d => d + " USD")
+        // Data Visualization with D3: Add Inline Styling to Elements
+        // .style("font-family", "verdana");
+        // Data Visualization with D3: Change Styles Based on Data
+        .style("color", d => (d < 20 ? "red" : "green"));
+      // Data Visualization with D3: Add Classes with D3
+      d3.select("body")
+        .selectAll("div")
+        .data(dataset)
+        .enter()
+        .append("div")
+        .attr("class", "bar")
+        // Data Visualization with D3: Update the Height of an Element Dynamically
+        // .style("height", d => d + "px");
+        // Data Visualization with D3: Change the Presentation of a Bar Chart
+        .style("height", d => d * 10 + "px");
+      //  Data Visualization with D3: Learn About SVG in D3
+      const w = 500;
+      const h = 100;
+      d3.select("body")
+        .append("svg")
+        .style("width", w + "px")
+        .style("height", h + "px");
+      // Data Visualization with D3: Display Shapes with SVG
+      d3.select("body")
+        .append("svg")
+        .attr("width", w)
+        .attr("height", h)
+        .append("rect")
+        .attr("width", 25)
+        .attr("height", 100)
+        .attr("x", 0)
+        .attr("y", 0);
+      // Data Visualization with D3: Create a Bar for Each Data Point in the Set
+      d3.select("body")
+        .append("svg")
+        .attr("width", w)
+        .attr("height", h)
+        .selectAll("rect")
+        .data(dataset)
+        .enter()
+        .append("rect")
+        // .attr("x", 0)
+        .attr("width", 25)
+        // .attr("y", 0)
+        // Data Visualization with D3: Dynamically Set the Coordinates for Each Bar
+        .attr("x", (d, i) => i * 30)
+        // Data Visualization with D3: Dynamically Change the Height of Each Bar
+        .attr("height", (d, i) => d * 3)
+        // Data Visualization with D3: Invert SVG Elements
+        .attr("y", (d, i) => {
+          return h - d * 3;
+        });
+    </script>
+  </body>
+</html>
