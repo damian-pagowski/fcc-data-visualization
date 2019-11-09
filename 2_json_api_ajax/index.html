@@ -46,17 +46,14 @@
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("getMessage").onclick = function() {
-          let req;
-          let json;
-          req = new XMLHttpRequest();
-          req.open("GET", "https://api.thecatapi.com/v1/images/search", true);
-          req.send();
-          req.onload = function() {
-            json = JSON.parse(req.responseText);
-            document.getElementsByClassName(
-              "message"
-            )[0].innerHTML = JSON.stringify(json);
-          };
+          fetch("https://api.thecatapi.com/v1/images/search")
+            .then(response => response.json())
+            .then(
+              data =>
+                (document.getElementsByClassName("message")[0].innerHTML = JSON.stringify(
+                  data
+                ))
+            );
         };
       });
     </script>
