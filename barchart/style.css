@@ -1,0 +1,23 @@
+#title {
+  text-align: center;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.app {
+  width: 100vw;
+  height: 100vh;
+  background: lightgray;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#barchart {
+  margin-top: 50px;
+  margin-left: 100px;
+}
+
+.bar{
+    
+}
