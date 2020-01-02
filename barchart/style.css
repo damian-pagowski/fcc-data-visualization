@@ -12,12 +12,24 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  position: relative;
 }
 #barchart {
-  margin-top: 50px;
+  top: 100px;
   margin-left: 100px;
+  position: absolute;
 }
 
-.bar{
-    
+.bar {
+  color: lightsalmon;
+}
+
+#tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  padding: 2px;
+  background: lightsteelblue;
 }
