@@ -1,0 +1,31 @@
+#title {
+  text-align: center;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.app {
+  width: 100vw;
+  height: 100vh;
+  background: lightgray;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+#container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#tooltip {
+  position: absolute;
+  width: 250px;
+  text-align: center;
+  height: 30px;
+  padding: 5px 15px;
+  background: lightsalmon;
+  border-radius: 10px;
+}
